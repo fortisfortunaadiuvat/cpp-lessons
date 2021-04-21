@@ -18,6 +18,8 @@ typedef struct Person2{
 
 int main()
 {
+    // How to reduce padding example
+    // Change the type order and compare 
     std::cout << "size of first person is: " << sizeof(person1) << std::endl;
     std::cout << "size of second person is: " << sizeof(person2) << std::endl;
 
