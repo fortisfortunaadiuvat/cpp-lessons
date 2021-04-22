@@ -25,15 +25,20 @@ public:
     // Operator overloading
     // Sequence the Person object with related to age / name
     bool operator < (const Person& person) const {
-        return this->name < person.name;
+        if (this->name == person.name) {
+            return this->age < person.age;
+        }else {
+            return this->name < person.name;
+        }        
     }
 };
 
 int main() {
     std::map<Person, int> person;
-    person[Person("Hakan", 24)] = 1;
-    person[Person("Yigit", 24)] = 3;
-    person[Person("Melih", 24)] = 2;
+    person[Person("Hakan", 24)] = 4;
+    person[Person("Hakan", 22)] = 2;
+    person[Person("Yigit", 25)] = 3;
+    person[Person("Melih", 26)] = 1;
 
     for (std::map<Person,int>::iterator it = person.begin(); it != person.end(); it++)
     {
